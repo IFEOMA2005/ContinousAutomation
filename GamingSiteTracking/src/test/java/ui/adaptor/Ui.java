@@ -38,13 +38,9 @@ public class Ui {
         getWebDriver().navigate().refresh();
     }
 
-    protected WebDriverWait wait(int timeOutInSeconds) {
-        return new WebDriverWait(getWebDriver(), timeOutInSeconds);
-    }
     // Set the browser properties
 
     public WebDriver setDriverPath(String browser) throws Exception {
-        //Check if parameter passed from TestNG is 'firefox'
         if(browser.equalsIgnoreCase("firefox"))
         {
             //create firefox instance
@@ -77,43 +73,6 @@ public class Ui {
         return driver;
     }
 
-    /**
-     * Click an element and wait for it to become stale
-     *
-     * @param by
-     *          the selector for the element to click
-     */
-    protected void clickAndWaitForStale(By by) {
-        WebElement element = getWebDriver().findElement(by);
-        element.click();
-        wait(5).until(ExpectedConditions.stalenessOf(element));
-    }
-
-    protected boolean isDisplayed(By by) {
-
-        return isDisplayed(by, 1);
-    }
-
-    protected boolean isDisplayed(By by, int expectedNumElems) {
-        List<WebElement> elems = getWebDriver().findElements(by);
-        return isDisplayed(elems, expectedNumElems);
-    }
-
-    protected boolean isDisplayed(List<WebElement> elems, int expectedNumElems) {
-        if (expectedNumElems < 1) {
-            throw new IllegalArgumentException("expectedNumElems must be > 0");
-        }
-
-        if (elems.size() != expectedNumElems) {
-            return false;
-        }
-        for (WebElement elem : elems) {
-            if (!elem.isDisplayed()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
+    
 
 }
