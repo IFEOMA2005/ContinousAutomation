@@ -8,20 +8,23 @@ import org.openqa.selenium.WebDriver;
 
 public class RegistrationPageIT extends TestbaseSetup {
 
-private Registration register;
-private WebDriver driver;
 
+
+public WebDriver driver;
 @Before
 public void setup() {
-    driver=getDriver();
+
 }
 
-    @Test
-public void register() {
-   register.clickRegisterButton();
-    register.setEmail("fiona.bruce@hitme.com");
-    register.setPassword("******");
-    register.setConfirmPassword("******");
+    Registration register = new Registration();
+
+@Test
+public void register() throws InterruptedException {
+    register.waitTillPageLoad();
+register.clickRegisterButton();
+register.clickRegisterTab();
+
+
 }
 
 

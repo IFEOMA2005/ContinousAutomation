@@ -2,38 +2,41 @@ package com.pack.basepage;
 
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TestbaseSetup {
 
-    private WebDriver driver;
+    private static ChromeDriver driver;
+    // WebDriver driver;
 
-
-    public  WebDriver getDriver() {
+    public WebDriver getDriver(){
         return driver;
     }
 
     private static final String APP_URL = "http://www.game.co.uk";
 
-
-@Before
-    public void launchApplication() {
+@BeforeClass
+    public static void launchApplication() {
         setChromeDriverProperty();
-        WebDriver driver = new ChromeDriver();
-        driver.navigate().to(APP_URL);
-    }
+        driver  = new ChromeDriver();
+        driver.get(APP_URL);
 
-@After
-    public void closeBrowser() {
+}
+
+@AfterClass
+    public static void tearDown() {
     driver.quit();
     }
 
-    public void setChromeDriverProperty() {
+   public static void setChromeDriverProperty() {
         System.setProperty("webdriver.chrome.driver", "/Users/alisonhawker/IdeaProjects/ConrinousAutomation/src/test/chromedriver");
     }
+/*
 
     protected WebDriverWait wait(int timeOutInSeconds) {
         return new WebDriverWait(driver, timeOutInSeconds);
@@ -48,5 +51,6 @@ public class TestbaseSetup {
         driver.navigate().refresh();
     }
 
+*/
 
 }

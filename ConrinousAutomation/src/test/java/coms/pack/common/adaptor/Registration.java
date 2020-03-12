@@ -1,32 +1,32 @@
 package coms.pack.common.adaptor;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class Registration {
 
-    protected WebDriver driver;
+  WebDriver driver;
 
-
+    public WebDriver webDriver() {
+        return driver;
+    }
 
     public void waitTillPageLoad() {
 
         driver.findElement(By.cssSelector("#pgHome"));
     }
 
-
-    public void clickRegisterButton() {
-        driver.findElement(By.cssSelector("#registerLink")).click();
+    public void clickRegisterButton() throws InterruptedException {
+   WebElement registerButton = this.driver.findElement(By.cssSelector("#registerLink"));
+        registerButton.click();
     }
-
     public void clickJoinButton() {
 
     driver.findElement(By.cssSelector("join")).click();
     }
-
     public void clickForMoreInfoButton()  {
         driver.findElement(By.cssSelector(".join")).click();
     }
