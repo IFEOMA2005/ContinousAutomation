@@ -44,21 +44,21 @@ public class Ui {
         if(browser.equalsIgnoreCase("firefox"))
         {
             //create firefox instance
-            System.setProperty("webdriver.gecko.driver", "/Users/alisonhawker/IdeaProjects/gameSite/geckodriver");
+            System.setProperty("webdriver.gecko.driver", "/Users/username/IdeaProjects/gameSite/geckodriver");
             driver = new FirefoxDriver();
         }
 
         //Check if parameter passed as 'chrome'
         if(browser.equalsIgnoreCase("chrome"))
         {
-            System.setProperty("webdriver.chrome.driver", "/Users/alisonhawker/IdeaProjects/gameSite/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "/Users/username/IdeaProjects/gameSite/chromedriver");
             driver = new ChromeDriver();
         }
 
         //Check if parameter passed as 'Edge'
         if(browser.equalsIgnoreCase("IE"))
         {
-            System.setProperty("webdriver.ie.driver","/Users/alisonhawker/IdeaProjects/gameSite/");
+            System.setProperty("webdriver.ie.driver","/Users/username/IdeaProjects/gameSite/");
             InternetExplorerDriver driver;
             driver = new InternetExplorerDriver();
         }
