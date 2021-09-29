@@ -34,7 +34,7 @@ public class TestbaseSetup {
     }
 
    public static void setChromeDriverProperty() {
-        System.setProperty("webdriver.chrome.driver", "/Users/alisonhawker/IdeaProjects/ConrinousAutomation/src/test/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/user/IdeaProjects/ConrinousAutomation/src/test/chromedriver");
     }
 /*
 
